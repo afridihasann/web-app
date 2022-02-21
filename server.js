@@ -144,14 +144,11 @@ const storage = multer.diskStorage({
       res.send(parsedItems);
     });
   });
-//////////////////
-
-// error page (did not try to make it custom. maybe next time)
+  
 app.use((req, res) => {
     res.status(404).send("404 Page Not Found");
 });
 
-// step 5 ( didnt add app.listen() ) see line 27
 dataService
     .initialize()
     .catch((err) => { console.error(err); });
